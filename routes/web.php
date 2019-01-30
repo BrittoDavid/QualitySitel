@@ -11,14 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::group(['prefix' => 'data'],function(){
-	Route::get('menu','DataController@index');
-    Route::get('listar','DataController@listar');
-    Route::get('crear','DataController@crear');
-    Route::post('registrar','DataController@registrar');
-});
-
+Route::get('/', function () { return view('index');});
+Route::get('/home', 'HomeController@index');
+Auth::routes();
