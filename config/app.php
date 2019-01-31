@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Quality Sitel'),
+    'name' => env('APP_NAME', 'Quality Tools'),
 
     /*
     |--------------------------------------------------------------------------

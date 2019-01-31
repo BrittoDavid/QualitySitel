@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('APP_NAME', 'Quality Sitel') }}</title>
+    <title>{{ config('APP_NAME', 'Quality Tools') }}</title>
     <!--Icon-->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -17,7 +17,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('APP_NAME', 'Quality Sitel') }}
+                    {{ config('APP_NAME', 'Quality Tools') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
