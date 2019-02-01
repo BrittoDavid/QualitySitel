@@ -57,6 +57,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'adp' => ['required', 'string','min:7', 'unique:users'],
             'document' => ['required', 'string', 'max:20'],
+            'nt_login' => ['required', 'string', 'max:20', 'unique:users'],
             'email' => ['string','email', 'max:255','unique:users'],
             'password' => ['required', 'string', 'max:10', 'confirmed'],
         ]);
@@ -74,7 +75,10 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'adp' => $data['adp'],
             'document' => $data['document'],
+            'nt_login' => $data['nt_login'],
             'email' => $data['email'],
+            'rol' => $data['rol'],
+            'remember_token' => $data['_token'],
             'password' => bcrypt($data['password']),
         ]);
     }

@@ -1,0 +1,88 @@
+	#mov1{
+ margin:0;
+ padding: 0;
+ position: relative;
+ width: 60px;
+ height: 40px;
+ background-color: #3B5A9A;
+ transition-duration:0.5s;
+}
+ 
+#mov2{
+ margin:0;
+ padding: 0;
+ position: relative;
+ width: 60px;
+ height: 40px;
+ background-color: #DF4B38;
+ transition-duration:0.5s;
+}
+ 
+#mov3{
+margin:0;
+ padding: 0;
+ position: relative;
+ width: 60px;
+ height: 40px;
+ background-color: #117BB8;
+ transition-duration:0.5s;
+}
+ 
+#mov4{
+ margin:0;
+ padding: 0;
+ position: relative;
+ width: 60px;
+ height: 40px;
+ background-color: #26ADE3;
+ transition-duration:0.5s;
+}
+#mov6{
+ margin:0;
+ padding: 0;
+ position: relative;
+ width: 60px;
+ height: 40px;
+ background-color: #05AF2C;
+ transition-duration:0.5s;
+}
+ 
+#mov5{
+ margin:0;
+ padding: 0;
+ position: relative;
+ width: 60px;
+ height: 40px;
+ background-color: #29A9E1;
+ transition-duration:0.5s;
+}
+ 
+#mov1:hover{
+ width: 100px;
+}
+ 
+#mov2:hover{
+ width: 100px;
+}
+ 
+#mov3:hover{
+ width: 100px;
+}
+ 
+#mov4:hover{
+ width: 100px;
+}
+ 
+#mov5:hover{
+ width: 100px;
+}
+#mov6:hover{
+ width: 100px;
+}
+ 
+#redes{
+ z-index: 1000;
+ position: fixed;
+ bottom: 40%;
+ left: -10px;
+}

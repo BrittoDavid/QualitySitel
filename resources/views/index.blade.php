@@ -17,7 +17,7 @@
                 <div class="top-right links">
                     @auth
                         <ul class="links">
-                            <li><a href="{{ url('/home') }}">{{ Auth::user()->name }}</a>
+                            <li><a href="{{ url('user/welcome') }}">{{ Auth::user()->name }}</a>
                                  <ul>
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();

@@ -11,14 +11,13 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="nt_login" class="col-md-4 col-form-label text-md-right">{{ __('NT Login') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
+                                <input id="nt_login" type="text" class="form-control{{ $errors->has('nt_login') ? ' is-invalid' : '' }}" name="nt_login" value="{{ old('nt_login') }}" required autofocus>
+                                @if ($errors->has('nt_login'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('nt_login') }}</strong>
                                     </span>
                                 @endif
                             </div>
