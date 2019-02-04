@@ -78,6 +78,7 @@ class RegisterController extends Controller
             'nt_login' => $data['nt_login'],
             'email' => $data['email'],
             'rol' => $data['rol'],
+            'photo' => $data['photo'],
             'remember_token' => $data['_token'],
             'password' => bcrypt($data['password']),
         ]);

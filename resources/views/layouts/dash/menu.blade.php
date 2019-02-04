@@ -5,7 +5,7 @@
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
               <center>   
-              <a href="#" class="site_title"><h3>Control board</h3></a>
+              <a href="#" class="site_title"><h3>QS</h3></a>
             </center>
             </div>
             <div class="clearfix"></div>
@@ -16,7 +16,7 @@
               </div>              
               <div style="margin-left: 1em">
                 <h2 style="color: white"></h2>
-                <h2 style="color: white">{{ Auth::user()->full_name }}</h2>
+                <h2 style="color: white">{{ Auth::user()->name }}</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
