@@ -47,29 +47,48 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group row">
-                            <label for="document" class="col-md-4 col-form-label text-md-right">{{ __('Document') }}</label>
-
+                            <label for="position" class="col-md-4 col-form-label text-md-right">{{ __('Position') }}</label>
                             <div class="col-md-6">
-                                <input id="document" type="text" class="form-control{{ $errors->has('document') ? ' is-invalid' : '' }}" name="document" value="{{ old('document') }}"  >
-                                @if ($errors->has('document'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('document') }}</strong>
-                                    </span>
-                                @endif
+                                <div class="form-group">
+                                  <select  name="position" id="position" class="form-control" required/>
+                                    <option value="">Select</option>
+                                    <option value="DV">DV</option>
+                                    <option value="OM">OM</option>
+                                    <option value="OMTT">OMTT</option>
+                                    <option value="RA">RA</option>
+                                    <option value="LS">LS</option>
+                                    <option value="LSTT">LSTT</option>
+                                    <option value="QA">QA</option>
+                                    <option value="QATT">QATT</option>
+                                    <option value="COACH">COACH</option>
+                                    <option value="COACHTT">COACHTT</option>
+                                    <option value="WF">WF</option>
+                                  </select>
+                                </div>
                             </div>
                         </div>
-
-
-
+                        <div class="form-group row">
+                            <label for="campaing_id" class="col-md-4 col-form-label text-md-right">{{ __('Campaing') }}</label>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                  <select  name="campaing_id" id="campaing_id" class="form-control" required/>
+                                    <option value="">Select</option>
+                                    @foreach($campaing as $cam)
+                                        <option value="{{$cam->id_campaing}}">{{$cam->name_campaing}}</option>
+                                    @endforeach
+                                  </select>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="example@sitel.com" >
-                                <input  type="hidden"  name="rol" value="{{ __('general users')}}" >
+                                <input  type="hidden"  name="rol" value="{{ __('general')}}" >
                                 <input  type="hidden"  name="photo" value="{{ __('images/user_foto/user.png')}}">
+                                <input  type="hidden"  name="users_status" value="{{ __('Active')}}">
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>

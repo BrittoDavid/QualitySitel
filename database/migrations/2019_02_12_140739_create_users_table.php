@@ -17,14 +17,22 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('adp')->unique();
-            $table->string('document')->unique();
             $table->string('nt_login')->unique();
             $table->string('email')->unique();
             $table->string('rol');
+            $table->string('position');
             $table->string('photo');
+            $table->string('users_status');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+        });
+
+        Schema::table('users',function(Blueprint $table)
+        {
+            $table->unsignedInteger('campaing_id');
+
+            $table->foreign('campaing_id')->references('id_campaing')->on('campaing')->onDelete('cascade');
         });
     }
 

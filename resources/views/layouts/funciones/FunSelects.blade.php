@@ -6,7 +6,8 @@
   	}
 /*FUNCION PARA AUTO SELECIONAR UNA OPCIÓN DEL SELECT, id = identificador del selec, y el valor del option a colocar el select debe estar cargado con el dato a llamar
 */  	
-function autoselect(id,valor){
+function autoselect(id,valor)
+{
 	$("#"+id).val(valor);
 }
 </script>

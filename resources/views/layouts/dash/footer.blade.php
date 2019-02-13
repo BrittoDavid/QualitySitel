@@ -50,7 +50,7 @@
     <script src="{{ asset('dash/vendors/moment/min/moment.min.js')}}"></script>
     <script src="{{ asset('dash/vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
     
-    <!--<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" ></script>
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js" ></script>
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.bootstrap.min.js" ></script>
@@ -65,10 +65,10 @@
 
 
     <!-- Fin funciones Especificas -->
-    <!-- funciones generales -->
-    
 
-    
+    <!-- funciones generales -->
+    @include('layouts.funciones.FunTablas')
+    @include('layouts.funciones.FunSelects')
     <!--Fin  funciones generales -->
     <script src="{{ asset('dash/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('dash/build/js/custom.min.js')}}"></script>

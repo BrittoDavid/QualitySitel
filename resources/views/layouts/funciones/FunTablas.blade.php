@@ -2,14 +2,17 @@
 	var counter = 1;
 
 function tabladinamica(id){
-    $.noConflict();
+    //$.noConflict();
 	var table = $('#'+id).DataTable( {
         lengthChange: false,
         buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
-    } );
+    });
+    
     table.buttons().container()
         .appendTo( '#'+id+'_wrapper .col-sm-6:eq(0)' );	
 }
+
+
 function addfila(table){
 	var t = $('#'+table).DataTable();
 

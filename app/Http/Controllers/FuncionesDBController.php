@@ -18,10 +18,10 @@ class FuncionesDBController extends Controller
     public  static function checker($data){
         if($data == true)
         {
-            Session::flash('correcto','Procesos Exitoso');  
+            Session::flash('right','Successful Processes');  
         }else
         {
-            Session::flash('incorrecto',"Ups Algo paso intentalo de nuevo");  
+            Session::flash('incorrect',"Ups Something happened try again");
         }
     }
     // FUNCION PARA CONSULTAR UN REGISTRO ESPECIFICO DE UNA TABLA
@@ -43,23 +43,23 @@ class FuncionesDBController extends Controller
     	return $sql;
     }
     // FUNCION PARA EDITAR UN REGISTRO DE UNA TABLA $TABLA: ES EL NOMBRE DE LA TABLA, $COLUMNA: ES LA COLOMNA QUE REFERENCIA EL REGISTRO UNICO, $IS: DATO DE REFERENCIA,
-    public static function Editar($tabla,$columna,$id,$data){
+    public static function update($tabla,$columna,$id,$data){
          $respon = DB::table($tabla)
             ->where($columna,$id)
             ->update($data);    
         FuncionesDBController::checker($data);   
     }    
     // FUNCION PARA CAMBIAR EL ESTADADO DE UN REGISTRO DE UNA TABLA, DEVUELVE ALERTA AL LA VISTA SI EL ELEMENTO YA ESTA ACTIVO O NO
-    public static function cambiarestado($data,$name_estado,$accion,$tabla,$id_name){
+    public static function shangestatus($data,$name_estado,$accion,$tabla,$id_name){
         if($data[0]->$name_estado == $accion)
         {
-            Session::flash("incorrecto","Error al intentar realizar la acción= ".$accion);
+            Session::flash("incorrect","Error trying to perform the action =  ".$accion);
         }else
         {
             DB::table($tabla)
             ->where($id_name, $data[0]->$id_name)
             ->update([$name_estado => $accion]);
-            Session::flash("correcto","proceso  realizado= ".$accion);
+            Session::flash("right","Process carried out = ".$accion);
         }        
     }     
 }

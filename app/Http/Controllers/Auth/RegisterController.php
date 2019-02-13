@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Campaing;
 
 /*modal database*/
 use App\User;
@@ -46,6 +47,15 @@ class RegisterController extends Controller
     }
 
     /**
+        *We use the function from here to edit it
+    **/
+    public function showRegistrationForm()
+    {
+        $campaing = Campaing::all();
+        return view('auth.register',compact('campaing'));
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -56,10 +66,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'adp' => ['required', 'string','min:7', 'unique:users'],
-            'document' => ['required', 'string', 'max:20'],
             'nt_login' => ['required', 'string', 'max:20', 'unique:users'],
             'email' => ['string','email', 'max:255','unique:users'],
             'password' => ['required', 'string', 'max:10', 'confirmed'],
+            'position' => ['required'],
         ]);
     }
 
@@ -74,13 +84,15 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'adp' => $data['adp'],
-            'document' => $data['document'],
             'nt_login' => $data['nt_login'],
             'email' => $data['email'],
             'rol' => $data['rol'],
+            'position' => $data['position'],
             'photo' => $data['photo'],
+            'users_status' => $data['users_status'],
             'remember_token' => $data['_token'],
             'password' => bcrypt($data['password']),
+            'campaing_id' => $data['campaing_id'],
         ]);
     }
 

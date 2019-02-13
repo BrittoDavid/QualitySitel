@@ -35,9 +35,23 @@ Route::get('email/resend', 'Auth\VerificationController@resend')->name('verifica
 
 //Users
 
-Route::group(['prefix' => 'user'],function(){
+Route::group(['prefix' => 'user'],function()
+{
     Route::get('welcome','UsersController@welcome');
+    Route::get('list','UsersController@list');
+    Route::get('profile','UsersController@profile');
+    Route::get('update',"UsersController@update");
+    Route::post('updatePost',"UsersController@updatePost");
+    Route::post('updateProfile',"UsersController@updateProfile");
+    Route::get('changeStatus','UsersController@changeStatus');
 });
+
+
+Route::group(['prefix' => 'campaign'],function()
+{
+	Route::get('list','CampaingController@list');
+});
+
 
 
         

@@ -3,15 +3,16 @@
 <div class="right_col" role="main">
   <div class="">
     <div class="row top_tiles">
-      <div class="header">
-        <center><img style="width: 20%;margin-top: -5em" src="https://masquevinilo.com/4650-thickbox_default/vinilo-decorativo-bienvenido-ii.jpg"></center></div>
+        <div class="header">
+          <center><span style="font: oblique bold 120% cursive; font-size: 90px;"><strong>Welcome</strong></span></center>
+        </div>
         <center>
-      <span style="font-size: 4em;"><strong> {{ Auth::user()->name}}</strong></span>
-      </center>
-      <center>
-      <span style="font-size: 4em;"><strong> {{ Auth::user()->rol}}</strong></span>
-      </center>
-      @include('alerts.notification')
+            <span style="font-size: 4em;"><strong> {{ Auth::user()->name}}</strong></span>
+        </center>
+        <center>
+          <span style="font-size: 4em;"><strong> {{ Auth::user()->position}}</strong></span>
+        </center>
+        @include('alerts.notification')
     </div>
 </div>
 </div>
