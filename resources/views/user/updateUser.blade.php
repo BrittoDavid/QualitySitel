@@ -22,6 +22,11 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    @if ($errors->has('name'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
                     <div class="input-group">
                         <span class="input-group-addon">Username</span>
                         <div class="form-line">
@@ -30,6 +35,11 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    @if ($errors->has('adp'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('adp') }}</strong>
+                        </span>
+                    @endif
                     <div class="input-group">
                         <span class="input-group-addon">Adp</span>
                         <div class="form-line">
@@ -38,6 +48,11 @@
                     </div>
                 </div> 
                 <div class="col-md-4">
+                    @if ($errors->has('nt_login'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('nt_login') }}</strong>
+                        </span>
+                    @endif
                     <div class="input-group">
                         <span class="input-group-addon">nt-login</span>
                         <div class="form-line">
@@ -46,6 +61,11 @@
                     </div>
                 </div> 
                 <div class="col-md-4">
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
                     <div class="input-group">
                         <span class="input-group-addon">email</span>
                         <div class="form-line">

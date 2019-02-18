@@ -27,43 +27,55 @@
             @csrf
             <div class="row">
                 <div class="col-md-4">
+                    @if ($errors->has('name'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
                     <div class="input-group">
                         <span class="input-group-addon">Name</span>
                         <div class="form-line">
-                            <input type="text" value="{{ Auth::user()->name}}" class="form-control" name="name">
+                            <input type="text" value="{{ Auth::user()->name}}" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
+                    @if ($errors->has('adp'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('adp') }}</strong>
+                        </span>
+                    @endif
                     <div class="input-group">
                         <span class="input-group-addon">Adp</span>
                         <div class="form-line">
-                            <input type="text" value="{{ Auth::user()-> adp }}" class="form-control" name="adp">
+                            <input type="text" value="{{ Auth::user()-> adp }}" class="form-control" id="adp" name="adp" value="{{ old('adp')}}">
                         </div>
                     </div>
                 </div>
                 @if(Auth::user()->rol == "developer" or Auth::user()->rol == "")
                 <div class="col-md-4">
+                    @if ($errors->has('nt_login'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('nt_login') }}</strong>
+                        </span>
+                    @endif
                     <div class="input-group">
                         <span class="input-group-addon">Nt-login</span>
                         <div class="form-line">
-                            <input type="text" value="{{ Auth::user()->nt_login }}" class="form-control" name="nt_login">
+                            <input type="text" value="{{ Auth::user()->nt_login }}" class="form-control" id="nt_login" name="nt_login" value="{{ old('nt_login')}}">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="input-group">
-                        <span class="input-group-addon">Position</span>
-                        <div class="form-line">
-                            <input type="text" value="{{ Auth::user()-> position }}" class="form-control" name="position">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
                     <div class="input-group">
                         <span class="input-group-addon">Email</span>
                         <div class="form-line">
-                            <input name="email" type="email" class="form-control" value="{{ Auth::user()->email }}" >
+                            <input name="email" type="email" class="form-control" id="email" value="{{ Auth::user()->email }}">
                         </div>
                     </div>
                 </div>

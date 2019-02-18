@@ -22,31 +22,39 @@
               <th>Status</th>
               <th>Campaing</th>
               @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator")
-              <th>Edit</th>
-              <th>Activate</th>
-              <th>Deactivate</th>
+                <th>Edit</th>
+                @if($option == "disabled")
+                  <th>Deactivate</th>
+                  @else
+                  <th>Activate</th>
+                @endif
               @endif
             </tr>
           </thead>
           <tbody>
           @foreach($users as $use)
-            <tr>
-              <td>{{ 'Usu_'.$use->id }}</td>
-              <td>{{ $use->name }}</td>
-              <td>{{ $use->adp }}</td>
-              <td>{{ $use->nt_login }}</td>
-              <td>{{ $use->email}}</td>
-              <td>{{ $use->rol}}</td>
-              <td>{{ $use->position}}</td>
-              <td>{{ $use->users_status}}</td>
-              <td>{{ $use->name_campaing}}</td>
-              @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator")
-              <td><a class="btn btn-info" href="{{ url('user/update?id='.$use->id)}}">Edit</a></td>
-              <td><a class="btn btn-success" href="{{ url('user/changeStatus?id='.$use->id.'&status=Active') }}">Activate</a></td>
-              <td><a class="btn btn-warning" href="{{ url('user/changeStatus?id='.$use->id.'&status=Disabled') }}">Deactivate</a>
-              </td>
-              @endif
-            </tr>
+            @if($use->id != Auth::user()->id)
+              <tr>
+                <td>{{ 'Usu_'.$use->id }}</td>
+                <td>{{ $use->name }}</td>
+                <td>{{ $use->adp }}</td>
+                <td>{{ $use->nt_login }}</td>
+                <td>{{ $use->email}}</td>
+                <td>{{ $use->rol}}</td>
+                <td>{{ $use->position}}</td>
+                <td>{{ $use->users_status}}</td>
+                <td>{{ $use->name_campaing}}</td>
+                @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator")
+                  <td><a class="btn btn-info" href="{{ url('user/update?id='.$use->id)}}"><span class="glyphicon glyphicon-wrench"></span></a></td>
+                  @if($option == "disabled")
+                    <td><a class="btn btn-warning" href="{{ url('user/changeStatus?id='.$use->id.'&status=Disabled') }}"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                    @else
+                    <td><a class="btn btn-success" href="{{ url('user/changeStatus?id='.$use->id.'&status=Active') }}"><span class="glyphicon glyphicon-ok-circle"></a></td>
+                  @endif
+                </td>
+                @endif
+              </tr>
+            @endif
           @endforeach
           </tbody>
         </table>

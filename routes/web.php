@@ -50,6 +50,11 @@ Route::group(['prefix' => 'user'],function()
 Route::group(['prefix' => 'campaign'],function()
 {
 	Route::get('list','CampaingController@list');
+	Route::get('create','CampaingController@create');
+	Route::post('store','CampaingController@store');
+    Route::get('update','CampaingController@update');
+    Route::post('updatePost','CampaingController@updatePost');
+    Route::get('changeStatus','CampaingController@changeStatus');
 });
 
 

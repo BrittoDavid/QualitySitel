@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UsersRequest;
+use Auth;
 
 
 /*modal database*/
@@ -14,8 +16,9 @@ use App\Http\Controllers\FuncionesController;
 
 class UsersController extends Controller
 {
+	//El usuario debe de estar registrado si quiere utilizar este controlador
     public function __construct()
-	{
+	{	
 		$this->middleware('auth');
 	}
 
@@ -30,12 +33,14 @@ class UsersController extends Controller
 	{	
 		extract($_GET);
 
+		//Si la opcion es active mostramos los usuarios activos
 		if ($option == "active") 
 		{
 			$users = User::where("users_status","Active")
 			->join("campaing","users.campaing_id","campaing.id_campaing")
 			->get();
-			$option = "disabled";	
+			$option = "disabled";
+		//Si la opcion es disabled mostramos los usuarios activos	
 		}elseif ($option == "disabled") 
 		{
 			$users = User::where("users_status","Disabled")
@@ -56,6 +61,7 @@ class UsersController extends Controller
 		return view ("user.profile");
 	}
 
+	//Vista para actualizar los usuarios
 	public function update()
 	{
 		extract($_GET);
@@ -67,9 +73,45 @@ class UsersController extends Controller
 	}
 
 	//Realizamos la actualización de los datos que el usuario edito
-	public function updateProfile()
-	{		
+	public function updateProfile(UsersRequest $Request)
+	{	
+		//Extraemos todos los datos enviados por POST	
 		extract($_POST);
+		//Hacemos una consulta en cada uno de los campos enviados para validar si los datos no estan ya registrados
+		$adp = User::where("adp",$adp)->get();
+		$nt_login = User::where("nt_login",$nt_login)->get();
+		$email = User::where("email",$email)->get();
+
+		//Hacemos la validación en cada una de las consultas
+
+		//ADP
+		if (count($adp) > 0) 
+		{
+			if (Auth::user()->id != $adp[0]['id']) 
+			{
+			   return redirect("user/profile")->with('incorrect','Ohh! something went wrong, adp already registered');
+			}
+		}
+
+		//NT LOGIN
+		if (count($nt_login) > 0) 
+		{
+			if (Auth::user()->id != $nt_login[0]['id']) 
+			{
+				return redirect("user/profile")->with('incorrect','Ohh! something went wrong, nt_login already registered');
+			}
+		}
+
+		//E-MAIL
+		if (count($email) > 0) 
+		{
+			if (Auth::user()->id != $email[0]['id']) 
+			{
+				return redirect("user/profile")->with('incorrect','Ohh! something went wrong, email already registered');
+			}
+		}
+
+		//Si todo esta bien realizamos la edición del usuario
 		extract($_FILES);
 		$src = FuncionesController::cargararchivo($_FILES['photo'],"images/user_foto/","user.png","editar");
 		 //Si al momento de editar el usuario no edita la foto, esta no se actualiza
@@ -82,10 +124,10 @@ class UsersController extends Controller
         }
         unset($_POST['_token']);
         FuncionesDBController::update("users","id",$id,$_POST);
-        return redirect("user/profile");
+        return redirect("user/profile")->with('right','The user was updated correctly');
 	}
 
-	public function updatePost()
+	public function updatePost(UsersRequest $Request)
 	{		
 		extract($_POST);
         unset($_POST['_token']);

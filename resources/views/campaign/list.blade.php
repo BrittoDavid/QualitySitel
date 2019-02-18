@@ -6,7 +6,8 @@
       <div class="header">
         <h1><center>LIST CAMPAIGN</center></h1>
         <center>
-          <a class="btn btn-primary" href="">Create Campaign</a>
+          <a class="btn btn-primary" href="{{ url('campaign/create')}}">Campaign create</a>
+          <a class="btn btn-primary" href="{{ url('campaign/list?option='.$option)}}">Campaign {{$option}}</a>
         </center>
       </div>
       @include('alerts.notification')
@@ -17,20 +18,27 @@
               <th>Campaign code</th>
               <th>Name</th>
               <th>Status Campaign</th>
-              <th>Update</th>
+              <th>Edit</th>
+              @if($option == "active")
               <th>Activate</th>
+              @else
               <th>Disable</th>
+              @endif
             </tr>
           </thead>
           <tbody>
             @foreach($campaign as $campa)
-            <tr>
-              <td>{{$campa->id_campaing}}</td>
-              <td>{{$campa->name_campaing}}</td>
-              <td>{{$campa->status_campaing}}</td>
-              <td><a class="btn btn-info" href="{{ url('campaña/editarCampa?campa='.$campa->id_campaing) }}">Update</a></td>
-              <td><a class="btn btn-success" href="{{ url('campaña/cambiarestado?campa='.$campa->id_campaing.'&accion=Activa') }}">Active</a></td>
-              <td><a class="btn btn-warning" href="{{ url('campaña/cambiarestado?campa='.$campa->id_campaing.'&accion=Desactiva') }}">Disabled</a></td>
+              <tr>
+                <td>{{$campa->id_campaing}}</td>
+                <td>{{$campa->name_campaing}}</td>
+                <td>{{$campa->status_campaing}}</td>
+                <td><a class="btn btn-info" href="{{ url('campaign/update?id='.$campa->id_campaing)}}"><span class="glyphicon glyphicon-wrench"></span></a></td>
+                  @if($option == "active")
+                    <td><a class="btn btn-success" href="{{url('campaign/changeStatus?id='.$campa->id_campaing.'&status=Active')}}"><span class="glyphicon glyphicon-ok-circle"></span></a></td>
+                    @else
+                    <td><a class="btn btn-warning" href="{{url('campaign/changeStatus?id='.$campa->id_campaing.'&status=Disabled')}}"><span class="glyphicon glyphicon-remove-circle"></span></a></td>
+                  @endif
+              <tr>
             @endforeach
         </tbody>
       </table>

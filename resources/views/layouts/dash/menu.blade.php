@@ -38,7 +38,7 @@
                   @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator" or Auth::user()->rol == "reporting")
                   <li><a><i class="glyphicon glyphicon-globe"></i> Campaigns <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url('campaign/list') }}">List campaigns</a>
+                      <li><a href="{{ url('campaign/list?option=active') }}">List campaigns</a>
                       <li><a href="{{ url('campaign/create') }}">Create new campaign</a>
                     </ul>
                   </li>
