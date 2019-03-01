@@ -1,0 +1,60 @@
+[33mcommit 6935ec8cf4f59df159b01ca3a28f6a13c2d2edcb[m[33m ([m[1;36mHEAD -> [m[1;32muser[m[33m, [m[1;31morigin/user[m[33m)[m
+Author: David Britto <brittoargote789@gmail.com>
+Date:   Wed Feb 13 16:55:49 2019 -0500
+
+    Finished users and campaigns at 20%
+
+[33mcommit 9e6c428c909006a63ee85769c17300cf62a26d0a[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/login-register[m[33m, [m[1;32mmaster[m[33m, [m[1;32mlogin-register[m[33m)[m
+Author: David Britto <brittoargote789@gmail.com>
+Date:   Mon Feb 4 16:19:43 2019 -0500
+
+    Login and register 70%
+
+[33mcommit 423d7642bb14296a26018395a5e0590e3aadc97f[m
+Author: David Britto <brittoargote789@gmail.com>
+Date:   Fri Feb 1 12:29:28 2019 -0500
+
+    Welcome view is 75%
+
+[33mcommit bca72f308d9055366a912b14bb9012f1846c2365[m
+Author: David Britto <brittoargote789@gmail.com>
+Date:   Thu Jan 31 12:37:49 2019 -0500
+
+    Users Controller
+
+[33mcommit 986d9c44fcc8aeec526d85b82ab2527a43fe9f39[m
+Author: David Britto <brittoargote789@gmail.com>
+Date:   Wed Jan 30 15:21:22 2019 -0500
+
+    Login and register 65%
+
+[33mcommit 8d9dc5e9f94d8499501f33baea8b621a132f2653[m
+Author: David Britto <brittoargote789@gmail.com>
+Date:   Wed Jan 30 11:29:26 2019 -0500
+
+    Login
+
+[33mcommit f92969332a44384e249750084c9507d089cafef9[m
+Author: David Britto <brittoargote789@gmail.com>
+Date:   Mon Jan 28 07:26:17 2019 -0500
+
+    Auditoria
+
+[33mcommit 03b19e1de1670709391d9f9e47a4616f01e4f6e5[m
+Merge: 2e5a091 5df11c8
+Author: David Britto <brittoargote789@gmail.com>
+Date:   Wed Jan 23 10:14:10 2019 -0500
+
+    Joins repositories
+
+[33mcommit 2e5a091d8a98419c38e04f0e25e9c3897479254b[m
+Author: David Britto <brittoargote789@gmail.com>
+Date:   Wed Jan 23 10:09:35 2019 -0500
+
+    Phase 2 Quality starts
+
+[33mcommit 5df11c8bdb8bd0eeb6b2e46ded9096838463655a[m
+Author: BrittoDavid <33103091+BrittoDavid@users.noreply.github.com>
+Date:   Wed Jan 23 10:06:40 2019 -0500
+
+    Initial commit

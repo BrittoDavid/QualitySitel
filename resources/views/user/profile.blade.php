@@ -52,7 +52,6 @@
                         </div>
                     </div>
                 </div>
-                @if(Auth::user()->rol == "developer" or Auth::user()->rol == "")
                 <div class="col-md-4">
                     @if ($errors->has('nt_login'))
                         <span class="invalid-feedback" role="alert">
@@ -79,7 +78,6 @@
                         </div>
                     </div>
                 </div>
-                @endif
                 <div class="col-md-4">
                     <div class="input-group">
                         <span class="input-group-addon">Id User</span>

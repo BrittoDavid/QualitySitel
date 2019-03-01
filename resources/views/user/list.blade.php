@@ -49,7 +49,7 @@
                   @if($option == "disabled")
                     <td><a class="btn btn-warning" href="{{ url('user/changeStatus?id='.$use->id.'&status=Disabled') }}"><span class="glyphicon glyphicon-remove-circle"></span></a>
                     @else
-                    <td><a class="btn btn-success" href="{{ url('user/changeStatus?id='.$use->id.'&status=Active') }}"><span class="glyphicon glyphicon-ok-circle"></a></td>
+                    <td><a class="btn btn-success" href="{{ url('user/changeStatus?id='.$use->id.'&status=Active') }}"><span class="glyphicon glyphicon-ok-circle"></span></a></td>
                   @endif
                 </td>
                 @endif
@@ -58,7 +58,6 @@
           @endforeach
           </tbody>
         </table>
-           
       </div>
     </div>
   </div>

@@ -75,6 +75,7 @@ class UsersController extends Controller
 	//Realizamos la actualización de los datos que el usuario edito
 	public function updateProfile(UsersRequest $Request)
 	{	
+
 		//Extraemos todos los datos enviados por POST	
 		extract($_POST);
 		//Hacemos una consulta en cada uno de los campos enviados para validar si los datos no estan ya registrados

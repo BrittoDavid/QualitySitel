@@ -61,6 +61,11 @@
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js" ></script>
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.colVis.min.js" ></script>
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    
+
+    <!--Select 2 from -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    
     <!-- funciones Especificas -->
 
 
@@ -72,5 +77,6 @@
     <!--Fin  funciones generales -->
     <script src="{{ asset('dash/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('dash/build/js/custom.min.js')}}"></script>
+    <script src="{{ asset('dash/build/js/script.js')}}"></script>
     </body>
 </html>

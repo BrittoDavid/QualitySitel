@@ -5,8 +5,8 @@
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
               <center>   
-              <a href="{{ url('user/welcome')}}" class="site_title"><h3>QS</h3></a>
-            </center>
+                <a href="{{ url('user/welcome')}}" class="site_title" ><h3 id="site_title">Quality Tools</h3></a>
+              </center>
             </div>
             <div class="clearfix"></div>
             <!-- menu profile quick info -->
@@ -43,20 +43,39 @@
                     </ul>
                   </li>
                   @endif 
-                    @if(Auth::user()->rol == "Gerente" or  Auth::user()->rol == "Administrador" or Auth::user()->rol == "Empresa")
-                  <li><a><i class="glyphicon glyphicon-headphones"></i> Wave con Agentes <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ url('agente/asignar') }}">Asignar Agentes a Wave</a>
-                    </ul>
-                  </li>
-                @endif
-                 @if(Auth::user()->rol == "Gerente" or  Auth::user()->rol == "Administrador" or Auth::user()->rol == "Empresa")
-                  <li><a><i class="fa fa-leanpub fa-x2 fa-lg"></i>Inventarios<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ url('inventario/listar') }}">Inventario de Productos</a>
-                    </ul>
-                  </li>
-                @endif                                    
+                  @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator" or Auth::user()->rol == "reporting" or Auth::user()->rol == "general")
+                    @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 4)
+                      <li><a><i class="glyphicon glyphicon-headphones"></i>Fedex<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="{{ url('fedex/template') }}">Template</a>
+                          <li><a href="{{ url('agente/asignar') }}">Roster</a>
+                            <li><a href="{{ url('agente/asignar') }}">Rawdata</a>
+                        </ul>
+                      </li>
+                    @endif
+                  @endif
+                  @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator" or Auth::user()->rol == "reporting" or Auth::user()->rol == "general")
+                    @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 2)
+                      <li><a><i class="glyphicon glyphicon-headphones"></i>Oportun<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="{{ url('agente/asignar') }}">Template</a>
+                          <li><a href="{{ url('agente/asignar') }}">Roster</a>
+                            <li><a href="{{ url('agente/asignar') }}">Rawdata</a>
+                        </ul>
+                      </li>
+                    @endif
+                  @endif
+                  @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator" or Auth::user()->rol == "reporting" or Auth::user()->rol == "general")
+                    @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 3)
+                      <li><a><i class="glyphicon glyphicon-headphones"></i>ADP<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="{{ url('agente/asignar') }}">Template</a>
+                          <li><a href="{{ url('agente/asignar') }}">Roster</a>
+                            <li><a href="{{ url('agente/asignar') }}">Rawdata</a>
+                        </ul>
+                      </li>
+                    @endif
+                  @endif                                   
                   <!--   @if(Auth::user()->rol == "Gerente" or Auth::user()->rol =="Empresa" or Auth::user()->rol == "Administrador")
                   <li><a><i class="fa fa-edit"></i> Facturación <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
@@ -124,7 +143,7 @@
     <div class="nav_menu">
       <nav>
         <div class="nav toggle">
-          <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          <a id="menu_toggle" onclick="siteTitle()"><i class="fa fa-bars"></i></a>
         </div>
 
         <ul class="nav navbar-nav navbar-right">
@@ -152,4 +171,8 @@
       </nav>
     </div>
   </div>
+
+
+
+
         <!-- /top navigation -->

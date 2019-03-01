@@ -20,5 +20,10 @@
     <link href="{{ asset('dash/vendors/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{ asset('dash/build/css/custom.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/select2.min.css') }}" />
+    <link href="{{ asset('css/select2.min.css') }}">
+    <link href="{{ asset('css/styleTemplate.css') }}" rel="stylesheet">
+
+    <!--Select 2 from -->
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 </head>

@@ -39,6 +39,7 @@
  * and open the template in the editor.
  */
 
+
 var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
     $BODY = $('body'),
     $MENU_TOGGLE = $('#menu_toggle'),
@@ -102,8 +103,9 @@ var setContentHeight = function () {
 // toggle small or large menu 
 $MENU_TOGGLE.on('click', function() {
 		console.log('clicked - menu toggle');
-		
-		if ($BODY.hasClass('nav-md')) {
+
+		if ($BODY.hasClass('nav-md')) 
+		{	
 			$SIDEBAR_MENU.find('li.active ul').hide();
 			$SIDEBAR_MENU.find('li.active').addClass('active-sm').removeClass('active');
 		} else {

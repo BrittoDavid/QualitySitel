@@ -38,7 +38,7 @@
                     @else
                     <td><a class="btn btn-warning" href="{{url('campaign/changeStatus?id='.$campa->id_campaing.'&status=Disabled')}}"><span class="glyphicon glyphicon-remove-circle"></span></a></td>
                   @endif
-              <tr>
+              </tr>
             @endforeach
         </tbody>
       </table>

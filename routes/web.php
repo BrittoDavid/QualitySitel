@@ -57,6 +57,10 @@ Route::group(['prefix' => 'campaign'],function()
     Route::get('changeStatus','CampaingController@changeStatus');
 });
 
+Route::group(['prefix' => 'fedex'],function()
+{
+    Route::get('template','FedexController@template');
+});
 
 
         
