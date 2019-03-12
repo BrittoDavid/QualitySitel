@@ -60,6 +60,9 @@ Route::group(['prefix' => 'campaign'],function()
 Route::group(['prefix' => 'fedex'],function()
 {
     Route::get('template','FedexController@template');
+    Route::post('darAgent','FedexController@darAgent');
+    Route::post('store','FedexController@store');
+    Route::get('rawdata','FedexController@rawdata');
 });
 
 

@@ -11,6 +11,63 @@ use Auth;
 use DB;
 class FuncionesController extends Controller
 {
+
+    //FUNCION CON LA CUAL QUITAMOS LOS ITEMS DEL METODO POST Y LO PONEMOS EN EL ARREGLO DATA EN FEDEX
+    public static function itemsFedex($data)
+    {
+
+
+        $items["p1_1"]    = $data["p1_1"];
+        $items["com1_1"] = $data["com1_1"];
+        $items["p1_2"]    = $data["p1_2"];
+        $items["com1_2"] = $data["com1_2"];
+        $items["p1_3"]    = $data["p1_3"];
+        $items["com1_3"] = $data["com1_3"];
+        $items["p1_4"]    = $data["p1_4"];
+        $items["com1_4"] = $data["com1_4"];
+        $items["p1_5"]    = $data["p1_5"];
+        $items["com1_5"] = $data["com1_5"];
+        $items["p2_1"]    = $data["p2_1"];
+        $items["com2_1"] = $data["com2_1"];
+        $items["p2_2"]    = $data["p2_2"];
+        $items["com2_2"] = $data["com2_2"];
+        $items["p2_3"]    = $data["p2_3"];
+        $items["com2_3"] = $data["com2_3"];
+        $items["p2_4"]    = $data["p2_4"];
+        $items["com2_4"] = $data["com2_4"];
+        $items["p3_1"]    = $data["p3_1"];
+        $items["com3_1"] = $data["com3_1"];
+        $items["p3_2"]    = $data["p3_2"];
+        $items["com3_2"] = $data["com3_2"];
+        $items["p3_3"]    = $data["p3_3"];
+        $items["com3_3"] = $data["com3_3"];
+        $items["p3_4"]    = $data["p3_4"];
+        $items["com3_4"] = $data["com3_4"];
+        $items["p4_1"]    = $data["p4_1"];
+        $items["process_compliance"] = "";
+        $items["eclipse"] = "";
+        $items["call_handling"] = "";
+        $items["efficiency"] = "";
+        $items["comments6"] = "";
+        $items["comments7"] = "";
+        $items["comments12"] = "";
+        $items["comments13"] = "";
+
+        return $items;
+    }
+
+    //FUNCION CON LA CUAL QUITAMOS TODOS LOS ITEMS DEL METODO POST
+    public static function dataFedex($data)
+    {
+        unset($data["p1_1"]);unset($data["com1_1"]);unset($data["p1_2"]);unset($data["com1_2"]);unset($data["p1_3"]);unset($data["com1_3"]);unset($data["p1_4"]);
+        unset($data["com1_4"]);unset($data["p1_5"]);unset($data["com1_5"]);unset($data["p2_1"]);unset($data["com2_1"]);unset($data["p2_2"]);unset($data["com2_2"]);
+        unset($data["p2_3"]);unset($data["com2_3"]);unset($data["p2_4"]);unset($data["com2_4"]);unset($data["p3_1"]);unset($data["com3_1"]);unset($data["p3_2"]);
+        unset($data["com3_2"]);unset($data["p3_3"]);unset($data["com3_3"]);unset($data["p3_4"]);unset($data["com3_4"]);unset($data["p4_1"]);
+
+        $data['rating'] = "";
+        return $data;
+    }
+
     // FUNCION PARA CARGAR LA CIUDAD EN UN SELECT SEGUN DEPARTAMENTO SELECCINADO
     public function cargarciudad()
     {
@@ -59,7 +116,7 @@ class FuncionesController extends Controller
             $message->from($de);
                });             
     }
-    // FUNCION PARA GENERAL EL HTML DE UN SELECT
+   // FUNCION PARA GENERAL EL HTML DE UN SELECT
     public static function cargarSelect($datos,$id,$name)
     {
         $select = "<option value=''>Seleccione</option>";

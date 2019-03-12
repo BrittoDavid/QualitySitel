@@ -9,8 +9,8 @@ class FuncionesDBController extends Controller
 {
     // METODO REUSABLE PARA REGISTRAR EN LA BASE DE DATOS CON UN MODELO Y DATA TIPO ARRAY INCLUYENTO LOS DATOS NESEZARIOS DE LARAVEL CREATED_AT, UPDATED_AT Y RETIRANDO EL TOKEN DE SEGIURIDAD
     public static function register($modelo,$data){
-        $data["created_at"] = date("Y-m-d");
-        $data["updated_at"] = date("Y-m-d");
+        $data["created_at"] = now();
+        $data["updated_at"] = now();
         unset($data["_token"]);
         FuncionesDBController::checker($modelo::insert($data));
     } 

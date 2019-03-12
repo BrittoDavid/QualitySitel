@@ -65,15 +65,18 @@
 
     <!--Select 2 from -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    
-    <!-- funciones Especificas -->
 
+    <!-- funciones Especificas -->
+    @include('fedex.FunFedex.FuncionesFedex')
 
     <!-- Fin funciones Especificas -->
 
     <!-- funciones generales -->
     @include('layouts.funciones.FunTablas')
     @include('layouts.funciones.FunSelects')
+    @include('layouts.funciones.FunAjaxPost')
+    @include('layouts.funciones.FunGenerales')
+    @include('layouts.funciones.FunCargando')
     <!--Fin  funciones generales -->
     <script src="{{ asset('dash/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('dash/build/js/custom.min.js')}}"></script>

@@ -48,8 +48,7 @@
                       <li><a><i class="glyphicon glyphicon-headphones"></i>Fedex<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                           <li><a href="{{ url('fedex/template') }}">Template</a>
-                          <li><a href="{{ url('agente/asignar') }}">Roster</a>
-                            <li><a href="{{ url('agente/asignar') }}">Rawdata</a>
+                          <li><a href="{{ url('fedex/rawdata') }}">Rawdata</a>
                         </ul>
                       </li>
                     @endif
@@ -58,9 +57,6 @@
                     @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 2)
                       <li><a><i class="glyphicon glyphicon-headphones"></i>Oportun<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="{{ url('agente/asignar') }}">Template</a>
-                          <li><a href="{{ url('agente/asignar') }}">Roster</a>
-                            <li><a href="{{ url('agente/asignar') }}">Rawdata</a>
                         </ul>
                       </li>
                     @endif
@@ -69,9 +65,6 @@
                     @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 3)
                       <li><a><i class="glyphicon glyphicon-headphones"></i>ADP<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="{{ url('agente/asignar') }}">Template</a>
-                          <li><a href="{{ url('agente/asignar') }}">Roster</a>
-                            <li><a href="{{ url('agente/asignar') }}">Rawdata</a>
                         </ul>
                       </li>
                     @endif

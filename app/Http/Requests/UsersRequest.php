@@ -25,7 +25,7 @@ class UsersRequest extends FormRequest
     {
         return [
             'name'     => 'required|min:3|string',
-            'adp'      => 'required|min:7|numeric',
+            'adp'      => 'required|min:5|numeric',
             'nt_login' => 'required',
             'email'    => 'required|email',
         ];
