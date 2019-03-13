@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
+                 @include('alerts.notification')
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -62,7 +62,6 @@
                                 @endif
                             </div>
                         </div>
-                        @include('alerts.notification')
                     </form>
                 </div>
             </div>
