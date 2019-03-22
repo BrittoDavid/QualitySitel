@@ -22,6 +22,8 @@
     <link href="{{ asset('dash/build/css/custom.min.css')}}" rel="stylesheet">
     <link href="{{ asset('css/select2.min.css') }}">
     <link href="{{ asset('css/styleTemplate.css') }}" rel="stylesheet">
+    <!-- time picker style -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 
     <!--Select 2 from -->
     

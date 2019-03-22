@@ -62,8 +62,22 @@ Route::group(['prefix' => 'fedex'],function()
     Route::post('darAgent','FedexController@darAgent');
     Route::post('store','FedexController@store');
     Route::get('rawdata','FedexController@rawdata');
+    Route::get('reporting','FedexController@reporting');
 });
 
+Route::group(['prefix' => 'adp'],function()
+{
+    Route::get('viewTracker','AdpController@viewTracker');
+    Route::post('registerTracker','AdpController@registerTracker');
+    Route::get('rawdataTracker','AdpController@rawdataTracker');
+    Route::get('updateTracker','AdpController@updateTracker');
+    Route::post('updateTrackerPost','AdpController@updateTrackerPost');
+    Route::post('deleteTracker','AdpController@deleteTracker');
+});
 
+Route::group(['prefix' => 'oportun'],function()
+{
+    Route::get('templateTelesales','OportunController@templateTelesales');
+});
         
 

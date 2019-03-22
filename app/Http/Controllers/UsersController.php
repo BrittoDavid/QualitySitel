@@ -128,6 +128,11 @@ class UsersController extends Controller
         return redirect("user/profile")->with('right','The user was updated correctly');
 	}
 
+	/*
+    *
+        * Realizamos la actualización del usuario
+    *
+    */
 	public function updatePost(UsersRequest $Request)
 	{		
 		extract($_POST);
@@ -136,6 +141,11 @@ class UsersController extends Controller
         return redirect("user/list?option=active");
 	}
 
+	/*
+    *
+        * Cambiamos el estado del usuario de activo a desabilitado o alcontrario
+    *
+    */
 	public function changeStatus()
 	{
 		

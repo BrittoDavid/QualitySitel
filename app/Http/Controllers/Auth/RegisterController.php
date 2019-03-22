@@ -49,6 +49,12 @@ class RegisterController extends Controller
     /**
         *We use the function from here to edit it
     **/
+
+    /*
+    *
+        * We use the functions to show the record view
+    *
+    */
     public function showRegistrationForm()
     {
         $campaing = Campaing::all();
@@ -61,6 +67,13 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+
+    /*
+    *
+        * We use the functions to data validator
+    *
+    */
     protected function validator(array $data)
     {
         return Validator::make($data, [

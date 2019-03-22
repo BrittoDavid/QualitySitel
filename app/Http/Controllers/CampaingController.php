@@ -60,6 +60,9 @@ class CampaingController extends Controller
         return redirect('campaign/list?option=active')->with('right','The Campaign is registered correctly');
     }
 
+    /**
+     * Show the form to update
+    **/
     public function update()
     {
         extract($_GET);
@@ -67,6 +70,9 @@ class CampaingController extends Controller
         return view('Campaign/update',compact('campaign'));
     }
 
+    /**
+     * Update the registres
+    **/
     public function updatePost(CampaignRequest $request)
     {
         extract($_POST);
@@ -75,6 +81,9 @@ class CampaingController extends Controller
         return redirect('campaign/list?option=active');
     }
 
+    /**
+     * Change the status of users.
+    **/
     public function changeStatus()
     {
         extract($_GET);

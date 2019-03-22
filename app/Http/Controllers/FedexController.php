@@ -52,9 +52,17 @@ class FedexController extends Controller
 		return redirect('fedex/template')->with("right","The monitoring has been registered correctly");
 	}
 
+	//Les mostramos el rawdata a los usuarios 
 	public function rawdata()
 	{
 		$rawdata = RawdataFedex::all();
 		return view('fedex/rawdata',compact('rawdata'));
+	}
+
+	//Les mostramos el rawdata a los reporting de manera que se pueda conectar a una base de datos excel
+	public function reporting()
+	{
+		$rawdata = RawdataFedex::all();
+		return view('fedex/reporting',compact('rawdata'));	
 	}
 }

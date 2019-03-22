@@ -27,8 +27,7 @@
               <div class="menu_section">
                 <h3><span>MENU</span></h3>
                 <ul class="nav side-menu">
-                  @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator" or Auth::user()->rol == "general"
-                  or Auth::user()->rol == "reporting")
+                  @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator" or Auth::user()->rol == "reporting")
                   <li><a><i class="glyphicon glyphicon-user "></i> Users <span class="fa fa-chevron-down  fa-2x fa-lg" ></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ url('user/list?option=active') }}">List users</a></li>
@@ -38,94 +37,40 @@
                   @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator" or Auth::user()->rol == "reporting")
                   <li><a><i class="glyphicon glyphicon-globe"></i> Campaigns <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url('campaign/list?option=active') }}">List campaigns</a>
-                      <li><a href="{{ url('campaign/create') }}">Create new campaign</a>
+                      <li><a href="{{ url('campaign/list?option=active') }}">List campaigns</a></li>
+                      <li><a href="{{ url('campaign/create') }}">Create new campaign</a></li>
                     </ul>
                   </li>
                   @endif 
-                  @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator" or Auth::user()->rol == "reporting" or Auth::user()->rol == "general")
-                    @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 4)
+                  @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 4)
                       <li><a><i class="glyphicon glyphicon-headphones"></i>Fedex<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="{{ url('fedex/template') }}">Template</a>
-                          <li><a href="{{ url('fedex/rawdata') }}">Rawdata</a>
+                          <li><a href="{{ url('fedex/template') }}">Template</a></li>
+                          <li><a href="{{ url('fedex/rawdata') }}">Rawdata</a></li>
+                        @if(Auth::user()->rol == "developer" or Auth::user()->rol == "reporting" or Auth::user()->rol == "administator")
+                          <li><a href="{{ url('fedex/reporting')}}">Reporting</a></li>
+                        @endif
                         </ul>
                       </li>
-                    @endif
                   @endif
-                  @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator" or Auth::user()->rol == "reporting" or Auth::user()->rol == "general")
-                    @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 2)
+                  @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 2)
                       <li><a><i class="glyphicon glyphicon-headphones"></i>Oportun<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                         </ul>
                       </li>
-                    @endif
                   @endif
-                  @if(Auth::user()->rol == "developer" or Auth::user()->rol == "administator" or Auth::user()->rol == "reporting" or Auth::user()->rol == "general")
-                    @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 3)
+                  @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 3)
                       <li><a><i class="glyphicon glyphicon-headphones"></i>ADP<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
+                          <li><a href="{{ url('adp/viewTracker') }}">Incident tracker</a></li>
+                          <li><a href="{{ url('adp/rawdataTracker') }}">Rawdata Incident tracker</a></li>
                         </ul>
                       </li>
-                    @endif
-                  @endif                                   
-                  <!--   @if(Auth::user()->rol == "Gerente" or Auth::user()->rol =="Empresa" or Auth::user()->rol == "Administrador")
-                  <li><a><i class="fa fa-edit"></i> Facturación <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ url('financiero/index') }}">Facturar</a></li>
-                      <li><a href="{{ url('financiero/listar') }}">Listar Facturas</a></li>
-                    </ul>
-                  </li>
-                  @endif
-                
-                  @if(Auth::user()->rol == "Gerente" or Auth::user()->rol == "Administrador" or Auth::user()->rol == "Empresa")
-                  <li><a><i class="fa fa-bar-chart-o"></i> Clientes <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ url('clientes/crear') }}">Crear Clientes</a></li>
-                      <li><a href="{{ url('clientes/index') }}">Listar Clientes</a></li> 
-                    </ul>
-                  </li>
-                  @endif
-                  @if(Auth::user()->rol == "Administrador" or Auth::user()->rol == "Empresa")
-                  <li><a><i class="fa fa-clone"></i>Responsable <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ url('responsables/crear') }}">Crear</a></li>
-                      <li><a href="{{ url('responsables/index') }}">Listar</a></li>
-                    </ul>
-                  </li>
-                  @endif
-                  @if(Auth::user()->rol == "Gerente" or Auth::user()->rol == "Empresa" or Auth::user()->rol == "Administrador" )
-                  <li><a><i class="fa fa-archive"></i>Area <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ url('area/crear') }}">Crear</a></li>
-                      <li><a href="{{ url('area/listar') }}">Listar</a></li>
-                    </ul>
-                  </li>
-                  @endif
-                  @if(Auth::user()->rol == "Gerente" or Auth::user()->rol == "Administrador" or Auth::user()->rol == "Empresa")
-                  <li><a><i class="fa fa-windows"></i> Inventario <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ url('inventario/crear') }}">Agregar Elemento</a></li>
-                      <li><a href="{{ url('inventario/listar') }}">Inventario</a></li>
-                                           <li><a href="{{ url('inventario/cargarPlantilla') }}">Cargar Palntilla de Inventario</a></li>
-                    </ul>
-                  </li>
-                  @endif
-                  @if(Auth::user()->rol == "Administrador" or Auth::user()->rol == "Empresa")
-                  <li><a><i class="fa fa-archive"></i>Valances <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{ url('area/crear') }}">Cuenta de Resultados</a></li>
-                      <li><a href="{{ url('area/listar') }}">Valance General</a></li>
-                    </ul>
-                  </li> 
-                  @endif     -->           
-                   
+                  @endif                                       
                 </ul>
               </div>
               <div class="menu_section">
-       
               </div>
-
             </div>
             <!-- /sidebar menu -->
           </div>
@@ -138,7 +83,6 @@
         <div class="nav toggle">
           <a id="menu_toggle" onclick="siteTitle()"><i class="fa fa-bars"></i></a>
         </div>
-
         <ul class="nav navbar-nav navbar-right">
           <li class="">
             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

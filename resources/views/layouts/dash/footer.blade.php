@@ -1,6 +1,5 @@
 <!-- footer content -->
     <script src="{{ asset('dash/vendors/jquery/dist/jquery.min.js')}}"></script>
-    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="{{ asset('dash/vendors/DateJS/build/date.js')}}"></script>
     <footer>
         <div class="pull-right">
@@ -13,10 +12,9 @@
 </div>
     <!-- jQuery -->    
     <!-- MODALES INICIO -->
-
-
-
+    @include('layouts.modals.deleteDataTracker')
     <!-- MODALES FIN -->
+    
     <!-- Bootstrap -->
     <!-- FastClick -->
     <script src="{{ asset('dash/vendors/fastclick/lib/fastclick.js')}}"></script>
@@ -49,7 +47,7 @@
     <!-- bootstrap-daterangepicker -->
     <script src="{{ asset('dash/vendors/moment/min/moment.min.js')}}"></script>
     <script src="{{ asset('dash/vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
-    
+    <!--datatables-->
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" ></script>
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js" ></script>
@@ -61,6 +59,8 @@
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js" ></script>
     <script src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.colVis.min.js" ></script>
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <!-- time picker style -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
     
 
     <!--Select 2 from -->
@@ -68,7 +68,7 @@
 
     <!-- funciones Especificas -->
     @include('fedex.FunFedex.FuncionesFedex')
-
+    @include('adp.FunAdp.FuncionesAdp')
     <!-- Fin funciones Especificas -->
 
     <!-- funciones generales -->
@@ -77,6 +77,7 @@
     @include('layouts.funciones.FunAjaxPost')
     @include('layouts.funciones.FunGenerales')
     @include('layouts.funciones.FunCargando')
+    @include('layouts.funciones.FunModals')
     <!--Fin  funciones generales -->
     <script src="{{ asset('dash/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('dash/build/js/custom.min.js')}}"></script>

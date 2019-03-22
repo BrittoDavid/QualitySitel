@@ -38,7 +38,7 @@
         <form action="{{url('fedex/store')}}" method="POST">
           @csrf
           <div class="row">
-             <center><input type="submit" value="Registrar" class="btn btn-success"></center>
+             <center><input type="submit" value="Save" class="btn btn-success"></center>
             <div class="col-md-6">
               <center>
                 <div class="input-group">

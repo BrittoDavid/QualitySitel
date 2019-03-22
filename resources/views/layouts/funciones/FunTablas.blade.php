@@ -3,7 +3,6 @@
 
 function tabladinamica(id){
     $.noConflict();
-
 	var table = $('#'+id).DataTable( {
         lengthChange: false,
         dom: 'Bfrtip',

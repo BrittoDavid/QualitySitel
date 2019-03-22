@@ -68,7 +68,11 @@ class ForgotPasswordController extends Controller
 
     }
 
-
+    /*
+    *
+        * Usamos enta funcion para hacer la actualización de la contraseña
+    *
+    */
     protected function update()
     {
         extract($_POST);

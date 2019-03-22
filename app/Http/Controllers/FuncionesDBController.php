@@ -42,7 +42,7 @@ class FuncionesDBController extends Controller
     	$sql = DB::table($tabla)->Max($columna);
     	return $sql;
     }
-    // FUNCION PARA EDITAR UN REGISTRO DE UNA TABLA $TABLA: ES EL NOMBRE DE LA TABLA, $COLUMNA: ES LA COLOMNA QUE REFERENCIA EL REGISTRO UNICO, $IS: DATO DE REFERENCIA,
+    // FUNCION PARA EDITAR UN REGISTRO DE UNA TABLA $TABLA: ES EL NOMBRE DE LA TABLA, $COLUMNA: ES LA COLOMNA QUE REFERENCIA EL REGISTRO UNICO, $ID: DATO DE REFERENCIA,
     public static function update($tabla,$columna,$id,$data){
          $respon = DB::table($tabla)
             ->where($columna,$id)
@@ -61,5 +61,12 @@ class FuncionesDBController extends Controller
             ->update([$name_estado => $accion]);
             Session::flash("right","Process carried out = ".$accion);
         }        
+    }
+
+    //FUNCION PARA ELIMINAR UN SOLO REGISTRO POR MEDIO DE SU LLAVE PRIMARIA
+    public static function delete($tabla,$columna,$id)
+    {
+        $sql = DB::table($tabla)->where($columna,$id)->delete();
+        return $sql;
     }     
 }
