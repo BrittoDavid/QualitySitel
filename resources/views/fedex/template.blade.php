@@ -44,7 +44,7 @@
                 <div class="input-group">
                   <span style="width: 150px;" class="input-group-addon">Coach</span>
                   <div class="form-line">
-                    <select  id="coach" name="coach" style="height: 28px; width: 200px;" onchange="darAgent(this.value,'darAgent')" onclick="darAdp(this.value,'adp','adpPHP','no')">
+                    <select  id="coach" style="height: 28px; width: 200px;" onchange="darAgent(this.value,'darAgent')" onclick="darAdp(this.value,'adp','adpPHP','no')">
                       <option value="">Seleccione</option>
                       @foreach($roster as $coach)
                         <option value="{{ $coach->coach_name }}">{{ $coach->coach_name }}</option>

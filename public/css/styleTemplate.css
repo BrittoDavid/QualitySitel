@@ -1,4 +1,4 @@
-/*ESTILO DE LAS IMAGENES*/
+/*-------------------------------------------------------------ESTILO DE LAS IMAGENES------------------------------------------------------------------*/
 
 /*Fedex*/
 .imgfedex > img
@@ -34,7 +34,7 @@
 	margin-top: 60px;
 }
 
-/*ESTILO DEL DIV DEL FORMULARIO*/
+/*---------------------------------------------------------------ESTILO DEL DIV DEL FORMULARIO-----------------------------------------------------*/
 
 .form 
 {
@@ -47,7 +47,7 @@
 {
 	position: absolute;
 	right: 20px;
-	top: 260px;
+	top: 280px;
 }
 
 .data
@@ -59,9 +59,39 @@
 }
 
 
-/*ESTILO DE LA TABLA*/
+/*------------------------------------------------------------------ESTILO DE LA TABLA-----------------------------------------------------------------*/
 
 table
 {
 	color: #000;
+}
+
+/*ADP Tier 2*/
+.tdDifferent
+{
+	background-color: rgba(164, 123, 188, 0.76);
+}
+
+.tdSection
+{
+	background-color: rgba(161, 161, 161, 1);
+}
+
+/*--------------------------------------------------------------------ESTILO GIF LOAD------------------------------------------------------------------*/
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../img/cargando/load.gif') 50% 50% no-repeat rgb(0,0,0);
+}
+
+/*------------------------------------------------------------------------ADP---------------------------------------------------------------------------*/
+
+.Compliance,.Identification,.Resolution,.Card,.t1
+{
+	display: none;
 }

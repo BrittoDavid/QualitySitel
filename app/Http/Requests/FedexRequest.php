@@ -24,7 +24,6 @@ class FedexRequest extends FormRequest
     public function rules()
     {
         return [
-            'coach' => 'required|max:100|',
             'date_and_time' => 'required|max:100|',
             'behavior_aht' => 'required|max:100|',
             'adp_agent' => 'required|max:100|',

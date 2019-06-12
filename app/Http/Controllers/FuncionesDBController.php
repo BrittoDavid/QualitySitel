@@ -68,5 +68,5 @@ class FuncionesDBController extends Controller
     {
         $sql = DB::table($tabla)->where($columna,$id)->delete();
         return $sql;
-    }     
+    }    
 }

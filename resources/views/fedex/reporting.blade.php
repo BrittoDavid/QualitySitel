@@ -154,4 +154,3 @@ $(document).ready(function() {
     } );
 } );
 </script>
-                <th>Pts Obtenidos</th>

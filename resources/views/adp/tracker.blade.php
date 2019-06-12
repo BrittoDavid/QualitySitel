@@ -61,7 +61,7 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">Call Time</span>
                   <div class="form-line">
-                     <input type="text" id="time" placeholder="H:M:S"  name="call_time" style="height: 28px; width: 200px;" required/>
+                     <input type="text" id="time" placeholder="H:M:S"  name="call_time" style="height: 28px; width: 200px;">
                   </div>
                 </div>
               </center>
@@ -69,9 +69,9 @@
             <div class="col-md-6">
               <center>
                 <div class="input-group">
-                  <span style="width: 200px;" class="input-group-addon">Call length</span>
+                  <span style="width: 200px;" class="input-group-addon">Call lenght</span>
                   <div class="form-line">
-                     <input type="text" name="call_length" style="height: 28px; width: 200px;" required/>
+                     <input type="text" name="call_length" style="height: 28px; width: 200px;">
                   </div>
                 </div>
               </center>
@@ -81,7 +81,7 @@
                 <div class="input-group">
                     <span style="width: 200px;" class="input-group-addon">Call ID</span>
                     <div class="form-line">
-                      <input type="number" name="call_id"  style="height: 28px; width: 200px;" required/>
+                      <input type="number" name="call_id"  style="height: 28px; width: 200px;">
                     </div>
                 </div>
               </center>
@@ -101,7 +101,7 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">Date answered</span>
                   <div class="form-line">
-                    <input type="date" name="date_answered" style="height: 28px; width: 200px;" required/>
+                    <input type="date" name="date_answered" style="height: 28px; width: 200px;">
                   </div>
                 </div>
               </center>
@@ -171,7 +171,7 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">Call Synopsis</span>
                   <div class="form-line">
-                    <input type="text" name="call_synopsis" style="height: 28px; width: 200px;" required/>
+                    <input type="text" name="call_synopsis" style="height: 28px; width: 200px;">
                   </div>
                 </div>
               </center>
@@ -181,7 +181,7 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">Findings</span>
                   <div class="form-line">
-                    <input type="text" name="findings" style="height: 28px; width: 200px;" required/>
+                    <input type="text" name="findings" style="height: 28px; width: 200px;">
                   </div>
                 </div>
               </center>
@@ -191,7 +191,7 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">Validity</span>
                   <div class="form-line">
-                    <select  name="validity" style="height: 28px; width: 200px;" required/>
+                    <select  name="validity" style="height: 28px; width: 200px;">
                       <option value="">Select</option>
                       <option value="YES">YES</option>
                       <option value="NO">NO</option>
@@ -205,7 +205,7 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">Reason for Validity</span>
                   <div class="form-line">
-                    <input type="text"  name="reason_for_validity" style="height: 28px; width: 200px;" required/>
+                    <input type="text"  name="reason_for_validity" style="height: 28px; width: 200px;">
                   </div>
                 </div>
               </center>
@@ -215,7 +215,7 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">Reason for contact</span>
                   <div class="form-line">
-                    <input type="text"  name="reason_for_contact" style="height: 28px; width: 200px;" required/>
+                    <input type="text"  name="reason_for_contact" style="height: 28px; width: 200px;">
                   </div>
                 </div>
               </center>
@@ -264,7 +264,23 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">KSW tag area of opportunity</span>
                   <div class="form-line">
-                    <input type="text"  name="area_opportunity" style="height: 28px; width: 200px;" required/>
+                    <select  name="area_opportunity" style="height: 28px; width: 200px;" required/>
+                      <option value="">Select</option>
+                      <option value="Knowledge Authentication process">Knowledge Authentication process</option>
+                      <option value="Knowledge Resolution validation - educating cx">Knowledge Resolution validation - educating cx</option>
+                      <option value="Knowledge Timeframes / fees / conditions - KB confirmation">Knowledge Timeframes / fees / conditions - KB confirmation</option>
+                      <option value="Knowledge Call type resolution">Knowledge Call type resolution</option>
+                      <option value="Skill Providing resolution on a positive note">Skill Providing resolution on a positive note</option>
+                      <option value="Skill Active listening / focus">Skill  Active listening / focus</option>
+                      <option value="Skill phrasing and word selection - clarity on resolution">Skill phrasing and word selection - clarity on resolution</option>
+                      <option value="Skill System usage - process completion">Skill System usage - process completion</option>
+                      <option value="Skill Account documentation">Skill Account documentation</option>
+                      <option value="Will  Confidence on resolution - refuses to connect to supervisor">Will Confidence on resolution - refuses to connect to supervisor</option>
+                      <option value="Will  False expectations">Will False expectations</option>
+                      <option value="Will  Call control expectations / proper service delivery">Will Call control expectations / proper service delivery</option>
+                      <option value="Will  Addressing Caller properly / attitude towards CH">Will Addressing Caller properly / attitude towards CH</option>
+                      <option value="Will  Account information update - Noting / Acc. Security">Will Account information update - Noting / Acc. Security</option>
+                    </select>
                   </div>
                 </div>
               </center>
@@ -292,23 +308,6 @@
                       <option value="">Select</option>
                       <option value="YES">YES</option>
                       <option value="NO">NO</option>
-                    </select>
-                  </div>
-                </div>
-              </center>
-            </div>
-            <div class="col-md-6">
-              <center>
-                <div class="input-group">
-                  <span style="width: 200px;" class="input-group-addon">QA section impacted</span>
-                  <div class="form-line">
-                    <select  name="qa_section" style="height: 28px; width: 200px;" required/>
-                      <option value="">Select</option>
-                      <option value="Compliance">Compliance</option>
-                      <option value="Identification">Identification</option>
-                      <option value="Resolution">Resolution</option>
-                      <option value="Card Holder advocacy">Card Holder advocacy</option>
-                      <option value="T1 to T2 Consult">T1 to T2 Consult</option>
                     </select>
                   </div>
                 </div>
@@ -491,9 +490,16 @@
             <div class="col-md-6">
               <center>
                 <div class="input-group">
-                  <span style="width: 200px;" class="input-group-addon">QA sub-section impacted</span>
+                  <span style="width: 200px;" class="input-group-addon">QA section impacted</span>
                   <div class="form-line">
-                    <input type="text"  name="qa_sub_section_impacted" style="height: 28px; width: 200px;" required/>
+                    <select  name="qa_section" style="height: 28px; width: 200px;" required/ onchange="sectionImpacted(this);">
+                      <option value="">Select</option>
+                      <option value="Compliance">Compliance</option>
+                      <option value="Identification">Identification</option>
+                      <option value="Resolution">Resolution</option>
+                      <option value="Card Holder advocacy">Card Holder advocacy</option>
+                      <option value="T1 to T2 Consult">T1 to T2 Consult</option>
+                    </select>
                   </div>
                 </div>
               </center>
@@ -504,6 +510,44 @@
                   <span style="width: 200px;" class="input-group-addon">Secondary QA sub-section <br> impacted if applicable</span>
                   <div class="form-line">
                     <input type="text" name="secondary_qa_sub_section_impacted" style="height: 48px; width: 200px;" required/>
+                  </div>
+                </div>
+              </center>
+            </div>
+            <div class="col-md-6">
+              <center>
+                <div class="input-group">
+                  <span style="width: 200px;" class="input-group-addon">QA sub-section impacted</span>
+                  <div class="form-line">
+                    <select  name="qa_sub_section_impacted" style="height: 28px; width: 200px;" required/>
+                      <option value="">Select</option>
+                      <option class="Compliance" value="Absence of account documentation">Absence of account documentation</option>
+                      <option class="Compliance" value="Inaccuracy in account documentation">Inaccuracy in account documentation</option>
+                      <option class="Compliance" value="Incorrect hold usage, permission and/or length">Incorrect hold usage, permission and/or length</option>
+                      <option class="Compliance" value="Follow Policies and procedures">Follow Policies and procedures</option>  
+                      <option class="Identification" value="Failure to prevent fraud">Failure to prevent fraud</option>
+                      <option class="Identification" value="Failure to properly authenticate account">Failure to properly authenticate account</option>
+                      <option class="Identification" value="Asked for SSN without exhausting all other authentication methods">Asked for SSN without exhausting all other authentication methods</option>
+                      <option class="Identification" value="Failure to verify additional information for account changes or procedures">Failure to verify additional information for account changes or procedures</option>
+                      <option class="Identification" value="Failure to ask adequate probing questions to determine root cause of the  issue">Failure to ask adequate probing questions to determine root cause of the  issue</option>
+                      <option class="Identification" value="Failure to review account notes from previous interactions">Failure to review account notes from previous interactions</option>
+                      <option class="Resolution" value="Failure to provide accurate information to the CH">Failure to provide accurate information to the CH</option>
+                      <option class="Resolution" value="Failure to accurately resolve CH's issue">Failure to accurately resolve CH's issue</option>
+                      <option class="Resolution" value="Failure to transfer to correct department">Failure to transfer to correct department</option>
+                      <option class="Resolution" value="Transferred a call without the need to">Transferred a call without the need to</option>
+                      <option class="Resolution" value="Skipped procedural steps of a given procedure">Skipped procedural steps of a given procedure</option>
+                      <option class="Resolution" value="Failure to execute proper procedure">Failure to execute proper procedure</option>
+                      <option class="Card" value="Released call">Released call</option>
+                      <option class="Card" value="Unappropiate language">Unappropiate language</option>
+                      <option class="Card" value="Unappropiate behavior (sarcasm, condescending, laughter)">Unappropiate behavior (sarcasm, condescending, laughter)</option>
+                      <option class="Card" value="Failure to transfer to supervisor after third request">Failure to transfer to supervisor after third request</option>
+                      <option class="Card" value="Failure to remain composed, calmed and professional">Failure to remain composed, calmed and professional</option>
+                      <option class="Card" value="Failure to demonstrate confidence through wording/patterns">Failure to demonstrate confidence through wording/patterns</option>
+                      <option class="Card" value="Interrupted the CH">Interrupted the CH</option>
+                      <option class="Card" value="Failure to maintain a professional language">Failure to maintain a professional language</option>
+                      <option class="Card" value="Failure to maintain control of the call">Failure to maintain control of the call</option>  
+                      <option class="t1" value="T1 to T2 Consult">T1 to T2 Consult</option>  
+                    </select>
                   </div>
                 </div>
               </center>
@@ -573,7 +617,7 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">Wave</span>
                   <div class="form-line">
-                    <input type="text" name="wave" style="height: 28px; width: 200px;" required/>
+                    <input type="text" name="wave" style="height: 28px; width: 200px;">
                   </div>
                 </div>
               </center>
@@ -583,7 +627,7 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">Immediate Supervisor</span>
                   <div class="form-line">
-                    <input type="text" name="immediate_supervisor" style="height: 28px; width: 200px;" required/>
+                    <input type="text" name="immediate_supervisor" style="height: 28px; width: 200px;">
                   </div>
                 </div>
               </center>
@@ -593,7 +637,7 @@
                 <div class="input-group">
                   <span style="width: 200px;" class="input-group-addon">Operations Manager</span>
                   <div class="form-line">
-                    <input type="text" name="operations_manager" style="height: 28px; width: 200px;" required/>
+                    <input type="text" name="operations_manager" style="height: 28px; width: 200px;">
                   </div>
                 </div>
               </center>

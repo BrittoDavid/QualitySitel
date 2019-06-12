@@ -46,6 +46,7 @@ Route::group(['prefix' => 'user'],function()
 });
 
 
+//Campaign 
 Route::group(['prefix' => 'campaign'],function()
 {
 	Route::get('list','CampaingController@list');
@@ -56,25 +57,38 @@ Route::group(['prefix' => 'campaign'],function()
     Route::get('changeStatus','CampaingController@changeStatus');
 });
 
+//Fedex
 Route::group(['prefix' => 'fedex'],function()
-{
+{   
+    //Tier 1
     Route::get('template','FedexController@template');
     Route::post('darAgent','FedexController@darAgent');
     Route::post('store','FedexController@store');
     Route::get('rawdata','FedexController@rawdata');
     Route::get('reporting','FedexController@reporting');
+    Route::get('qualityPerformance','FedexController@qualityPerformance');
 });
 
+//Adp
 Route::group(['prefix' => 'adp'],function()
-{
+{   
+    //Tracker
     Route::get('viewTracker','AdpController@viewTracker');
     Route::post('registerTracker','AdpController@registerTracker');
     Route::get('rawdataTracker','AdpController@rawdataTracker');
     Route::get('updateTracker','AdpController@updateTracker');
     Route::post('updateTrackerPost','AdpController@updateTrackerPost');
     Route::post('deleteTracker','AdpController@deleteTracker');
+    //Tier 1
+    Route::get('templateTier1','AdpController@templateTier1');
+    //Tier 2
+    Route::get('templateTier2','AdpController@templateTier2');
+    Route::post('storeTier2','AdpController@storeTier2');
+    Route::post('darAgent','AdpController@darAgent');
+
 });
 
+//Oportun
 Route::group(['prefix' => 'oportun'],function()
 {
     Route::get('templateTelesales','OportunController@templateTelesales');

@@ -1,7 +1,7 @@
 <body class="nav-md" style="background-color:#a00303;">
     <div class="container body">
       <div class="main_container">
-        <div class="col-md-3 left_col">
+        <div  class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
               <center>   
@@ -48,22 +48,23 @@
                           <li><a href="{{ url('fedex/template') }}">Template</a></li>
                           <li><a href="{{ url('fedex/rawdata') }}">Rawdata</a></li>
                         @if(Auth::user()->rol == "developer" or Auth::user()->rol == "reporting" or Auth::user()->rol == "administator")
-                          <li><a href="{{ url('fedex/reporting')}}">Reporting</a></li>
+                          <li><a target="_blank" href="{{ url('fedex/reporting')}}">Reporting</a></li>
                         @endif
-                        </ul>
-                      </li>
-                  @endif
-                  @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 2)
-                      <li><a><i class="glyphicon glyphicon-headphones"></i>Oportun<span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
                         </ul>
                       </li>
                   @endif
                   @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 3)
                       <li><a><i class="glyphicon glyphicon-headphones"></i>ADP<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
+                          <li><a href="{{ url('adp/templateTier2') }}">Tier 2 Scorecard (Still in development)</a></li>
                           <li><a href="{{ url('adp/viewTracker') }}">Incident tracker</a></li>
                           <li><a href="{{ url('adp/rawdataTracker') }}">Rawdata Incident tracker</a></li>
+                        </ul>
+                      </li>
+                  @endif
+                  @if(Auth::user()->campaing_id == 1 or Auth::user()->campaing_id == 2)
+                      <li><a><i class="glyphicon glyphicon-headphones"></i>Oportun<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
                         </ul>
                       </li>
                   @endif                                       

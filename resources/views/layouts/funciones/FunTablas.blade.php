@@ -5,19 +5,20 @@ function tabladinamica(id){
     $.noConflict();
 	var table = $('#'+id).DataTable( {
         lengthChange: false,
+        responsive: true,
         dom: 'Bfrtip',
         buttons: [ 'copy', 'excel', 'pdf', 'colvis',]        
     });
 
     table.buttons().container()
         .appendTo( '#'+id+'_wrapper .col-sm-6:eq(0)' );	
+
 }
 
 
 function addfila(table){
 	var t = $('#'+table).DataTable();
-
-    
+        
         t.row.add( [
             counter +'<a href="javascript::void()" onclick="quitar('+counter+')">Quitar</a>',
             counter +'.2',

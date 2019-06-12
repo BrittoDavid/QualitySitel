@@ -37,20 +37,6 @@ function enter()
 	}, false);
 }
 
-/*FUNCION PARA PONER LA FECHA DEL DIA QUE SE REALICE DICHO MONITOREO*/
-function evolucionDate()
-{	
-	//obtenemos la fecha
-	n =  new Date();
-	//Año
-	y = n.getFullYear();
-	//Mes
-	m = n.getMonth() + 1;
-	//Día
-	d = n.getDate();
-
-	document.qa.audit_date.value = m + "/" + d + "/" + y;		
-}
 
 
 /*VERIFICAMOS LAS OPCIONES PARA SACAR EL SCORE EN FEDEX*/
@@ -64,7 +50,7 @@ function verifedex(evento,input)
 }
 
 
-/*FUNCION CON LA CUAL IREMOS SUMANDO EL PUNTAJE DEL EGENTE*/
+/*FUNCION CON LA CUAL IREMOS SUMANDO EL PUNTAJE DEL EGENTE DE LA CAMPAÑA DE FEDEX*/
 function scorefedex()
 {	
 	$
@@ -98,3 +84,111 @@ function scorefedex()
     });
 }
 
+
+/*VERIFICAMOS LAS OPCIONES PARA SACAR EL SCORE EN ADP*/
+function veriadp(evento,value,inputA,inputB)
+{	
+	//cogemos el valor que vale el items
+	valor = document.getElementById(value).value;
+	//Recogemos que opción escogio el auditor 
+	option = evento.value;
+	id = evento.id;
+	alert(id);
+	//Dependiendo la opción se realizan diferentes acciones
+	if (option == "Yes") 
+	{
+		document.getElementById(inputA).value = valor;
+		document.getElementById(inputB).value = valor;
+
+	}else if (option == "No") 
+	{
+		document.getElementById(inputA).value = 0;
+		document.getElementById(inputB).value = valor;
+
+	} else 
+	{
+		document.getElementById(inputA).value = 0;
+		document.getElementById(inputB).value = 0;
+
+	}
+
+	scoreadp();
+}
+
+/*FUNCION CON LA CUAL IREMOS SUMANDO EL PUNTAJE DEL EGENTE DE LA CAMPAÑA DE ADP*/
+function scoreadp()
+{
+	//Esta funcion se activa cuando el usuario elige un opcion de cualquier select
+	$("select").change(function()
+	{
+
+       //variables con las cuales obtenemos el porcentaje
+       var scr = 0;
+       var puntosTotales = 0;
+       var puntosObtenidos = 0;
+
+       //sumamos todos los puntos totales que puede sacar el agente
+       $( ".sumPoss" ).each(function( index ) {
+
+       		if ($(this).val() == "AF") 
+       		{
+       			$(this).val(0);
+       		}
+
+  			puntosTotales += parseInt($(this).val(), 10);
+
+		});
+
+       //sumamos todos los puntos obtenidos que va sacando el agente
+       $( ".sumObt" ).each(function( index ) {
+
+       		if ($(this).val() == "AF") 
+       		{
+       			puntosObtenidos = 0;
+       			return false;
+       		}
+
+  			puntosObtenidos += parseInt($(this).val(), 10);
+
+		});
+
+       // si ambos parametros son iguales a 0 hacemos que el porcentaje sea igual a 0 para evitar errores
+       if (puntosTotales == 0 && puntosObtenidos == 0) 
+       {
+       		scr = 0;
+
+       		//Sino pues sacamos el porcentaje
+       }else
+       {
+       		scr =   parseFloat((puntosTotales/ puntosObtenidos) * 100 );
+       }
+      
+
+       //Dependiendo el valor de "scr" colocamos que se muestre
+       	if (scr == 100) 
+		{	
+			$("#scoreqa").val(scr + "%");
+			$("#scoreqaPHP").val(scr + "%");
+			//document.qa.scoreqa.style.color='green';
+		}else if (scr == 0) 
+		{	
+			$("#scoreqa").val(0);
+			$("#scoreqaPHP").val(0);
+			//document.qa.scoreqa.style.color='black';	
+		}else 
+		{	
+			var n = scr.toFixed(2);
+			$("#scoreqa").val(n + "%");
+			$("#scoreqaPHP").val(n + "%");
+			//document.qa.scoreqa.style.color='red';
+		}
+
+		//Guardamos los valores en dichas input tipo text con disable para mostrarlos en la vista
+		$("#possible").val(puntosTotales);
+	  	$("#obtained").val(puntosObtenidos);
+
+	  	//Guardamos los valores en dichas input tipo hidden para mandalos a los controladores
+	  	$("#possiblePHP").val(puntosTotales);
+	  	$("#obtainedPHP").val(puntosObtenidos);
+    });
+}

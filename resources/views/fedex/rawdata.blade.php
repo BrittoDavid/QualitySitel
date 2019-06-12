@@ -12,7 +12,10 @@
           </div>
         </div>
       </div>
-      <br><br><br>
+
+      <div class="header">
+        <center><a class="btn btn-info" href="{{url('fedex/qualityPerformance')}}">Quality Performance</a></center>
+      </div>
       <!--/LOGO-->
        @include('alerts.notification')
       <!--MESSAJES ERROR-->
@@ -38,6 +41,7 @@
               <th>Coach</th>
               <th>Wave</th>
               <th>Auditor</th>
+              <th>Auditor Position</th>
               <th>Stage</th>
               <th>Behavior AHT</th>
               <th>Outcome Behavior</th>
@@ -50,6 +54,7 @@
               <th>Driver AHT</th>
               <th>Score</th>
               <th>Rating Points</th>
+              <th>Month</th>
               <th>1.1</th>
               <th>1.2</th>
               <th>1.3</th>
@@ -95,6 +100,7 @@
                 <td>{{$raw->coach_name}}</td>
                 <td>{{$raw->wave}}</td>
                 <td>{{$raw->name}}</td>
+                <td>{{$raw->position}}</td>
                 <td>{{$raw->stage}}</td>
                 <td>{{$raw->behavior_aht}}</td>
                 <td>{{$raw->outcome_behavior}}</td>
@@ -107,6 +113,7 @@
                 <td>{{$raw->driver_aht}}</td>
                 <td>{{$raw->score}}</td>
                 <td>{{$raw->rating}}</td>
+                <td>{{$raw->month}}</td>
                 <td>{{$raw->p1_1}}</td>
                 <td>{{$raw->p1_2}}</td>
                 <td>{{$raw->p1_3}}</td>

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\TrackerAdp;use App\ViewtrackerAdp;use Auth;
+use App\TrackerAdp;use App\ViewtrackerAdp;use Auth;use App\Roster;
 use App\Http\Controllers\FuncionesDBController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\AdpRequest;
 
 class AdpController extends Controller
 {   
@@ -59,8 +61,8 @@ class AdpController extends Controller
     {
         extract($_POST);
         unset($_POST['_token']);
-        FuncionesDBController::update('incident_tracker_adp','id_tracker',$id_tracker,$_POST);
-        return redirect('adp/rawdataTracker')->with('right','The Incident has been updated correctly');
+        //FuncionesDBController::update('incident_tracker_adp','id_tracker',$id_tracker,$_POST);
+        return redirect('adp/rawdataTracker')->with('incorrect','At this moment the migration  of the data is being carried out, it will not be  possible register until June 13');
     }
 
     /**
@@ -72,5 +74,41 @@ class AdpController extends Controller
         unset($_POST["_token"]);
         FuncionesDBController::delete('incident_tracker_adp','id_tracker',$id);
         return redirect('adp/rawdataTracker')->with('right','The Incident has been deleted correctly');
+    }
+
+    //Funcion donde mostramos los agentes de cada coach
+    public function darAgent()
+    {   
+        extract($_POST);
+        $roster = Roster::where('coach_name',$_POST["data"])->orderByRaw('name_agent ASC')->get();
+        $select = FuncionesController::cargarSelect($roster,"adp","name_agent");
+        echo $select;
+    }
+
+    /*
+    *We use the function show the view template Tier 1
+    **/
+    public function templateTier1()
+    {
+        return view('adp.templateTier2');   
+    }
+
+    /**
+    *We use the function show the view template Tier 2
+    */
+
+    public function templateTier2()
+    {
+        $roster = DB::table('roster')
+        ->select('coach_name')
+        ->where('campaing_id','3')
+        ->distinct()
+        ->get();
+        return view('adp.templateTier2',compact('roster'));
+    }
+
+    public function storeTier2(AdpRequest $request)
+    {
+        dd($_POST);
     }
 }
